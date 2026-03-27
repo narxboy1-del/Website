@@ -1,0 +1,45 @@
+qurban-elite/
+├── package.json
+├── next.config.mjs
+├── tailwind.config.ts
+├── postcss.config.mjs
+├── tsconfig.json
+├── public/
+│   └── animals.json
+├── src/
+│   ├── app/
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── catalog/
+│   │   │   └── page.tsx
+│   │   ├── animal/
+│   │   │   └── [id]/
+│   │   │       └── page.tsx
+│   │   ├── admin-secret/
+│   │   │   └── page.tsx
+│   │   └── api/
+│   │       └── animals/
+│   │           ├── route.ts
+│   │           └── [id]/
+│   │               └── route.ts
+│   ├── components/
+│   │   ├── Navbar.tsx
+│   │   ├── Hero.tsx
+│   │   ├── AnimalCard.tsx
+│   │   ├── FeaturedAnimals.tsx
+│   │   ├── TrustIndicators.tsx
+│   │   ├── QurbanCalculator.tsx
+│   │   ├── WeightSimulator.tsx
+│   │   ├── AboutPreview.tsx
+│   │   ├── ContactSection.tsx
+│   │   ├── Footer.tsx
+│   │   ├── IslamicPattern.tsx
+│   │   ├── ScrollReveal.tsx
+│   │   ├── ParticleField.tsx
+│   │   ├── CertBadge.tsx
+│   │   └── TiltCard.tsx
+│   ├── data/
+│   │   └── animals.ts
+│   └── lib/
+│       └── utils.ts

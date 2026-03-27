@@ -1,0 +1,440 @@
+export interface Animal {
+  id: string;
+  name: string;
+  type: "cow" | "goat" | "sheep";
+  breed: string;
+  weight: number;
+  age: number;
+  price: number;
+  image: string;
+  images: string[];
+  healthStatus: "excellent" | "good" | "certified";
+  certification: string[];
+  description: string;
+  gender: "male" | "female";
+  color: string;
+  featured: boolean;
+  videoUrl?: string;
+}
+
+export const initialAnimals: Animal[] = [
+  // ============================================================
+  // 🐄 SAPI (COWS) — Foto sapi qurban asli
+  // ============================================================
+  {
+    id: "cow-001",
+    name: "Sultan Al-Baraka",
+    type: "cow",
+    breed: "Brahman Premium",
+    weight: 450,
+    age: 24,
+    price: 28500000,
+    image:
+      "https://images.unsplash.com/photo-1545468800-85cc9bc6ecf7?w=800&h=600&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1545468800-85cc9bc6ecf7?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&h=800&fit=crop&q=80",
+    ],
+    healthStatus: "excellent",
+    certification: ["veterinary-checked", "halal-certified", "premium-grade"],
+    description:
+      "Sapi Brahman jantan unggulan dengan postur tubuh besar dan kekar. Dipelihara dengan pakan organik di padang rumput terbuka dengan pengawasan dokter hewan harian. Sangat cocok untuk Qurban dengan kualitas daging premium.",
+    gender: "male",
+    color: "Coklat Tua",
+    featured: true,
+  },
+  {
+    id: "cow-002",
+    name: "Raja Nusantara",
+    type: "cow",
+    breed: "Limousin Cross",
+    weight: 520,
+    age: 30,
+    price: 35000000,
+    image:
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1545468800-85cc9bc6ecf7?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=1200&h=800&fit=crop&q=80",
+    ],
+    healthStatus: "excellent",
+    certification: [
+      "veterinary-checked",
+      "halal-certified",
+      "premium-grade",
+      "organic-fed",
+    ],
+    description:
+      "Sapi Limousin persilangan dengan perkembangan otot superior. Pakan organik premium memastikan kualitas daging tertinggi. Pilihan terbaik kami untuk pembeli yang menginginkan yang terbaik.",
+    gender: "male",
+    color: "Coklat Keemasan",
+    featured: true,
+  },
+  {
+    id: "cow-003",
+    name: "Pangeran Emas",
+    type: "cow",
+    breed: "Simental",
+    weight: 480,
+    age: 26,
+    price: 32000000,
+    image:
+      "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=800&h=600&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1546445317-29f4545e9d53?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&h=800&fit=crop&q=80",
+    ],
+    healthStatus: "excellent",
+    certification: ["veterinary-checked", "halal-certified", "premium-grade"],
+    description:
+      "Sapi Simental premium yang terkenal dengan daging berkualitas tinggi dan rendah lemak. Dipelihara dengan nutrisi seimbang dan pemeriksaan kesehatan rutin.",
+    gender: "male",
+    color: "Putih & Coklat",
+    featured: false,
+  },
+  {
+    id: "cow-004",
+    name: "Satria Jaya",
+    type: "cow",
+    breed: "Bali Cattle",
+    weight: 380,
+    age: 22,
+    price: 22000000,
+    image:
+      "https://images.unsplash.com/photo-1546445317-29f4545e9d53?w=800&h=600&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1546445317-29f4545e9d53?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=1200&h=800&fit=crop&q=80",
+    ],
+    healthStatus: "good",
+    certification: ["veterinary-checked", "halal-certified"],
+    description:
+      "Sapi Bali asli dengan tekstur daging yang sangat baik. Pilihan populer untuk Qurban dengan daging yang empuk dan beraroma khas.",
+    gender: "male",
+    color: "Coklat Kemerahan",
+    featured: false,
+  },
+  {
+    id: "cow-005",
+    name: "Gagah Perkasa",
+    type: "cow",
+    breed: "Angus Cross",
+    weight: 500,
+    age: 28,
+    price: 38000000,
+    image:
+      "https://images.unsplash.com/photo-1527153907251-24da767c5765?w=800&h=600&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1527153907251-24da767c5765?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1545468800-85cc9bc6ecf7?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&h=800&fit=crop&q=80",
+    ],
+    healthStatus: "excellent",
+    certification: [
+      "veterinary-checked",
+      "halal-certified",
+      "premium-grade",
+      "organic-fed",
+    ],
+    description:
+      "Sapi Angus persilangan dengan marbling daging yang luar biasa. Kualitas super premium untuk Qurban istimewa. Dipelihara dengan standar internasional.",
+    gender: "male",
+    color: "Hitam",
+    featured: true,
+  },
+  {
+    id: "cow-006",
+    name: "Maha Perkasa",
+    type: "cow",
+    breed: "PO (Peranakan Ongole)",
+    weight: 420,
+    age: 25,
+    price: 25000000,
+    image:
+      "https://images.unsplash.com/photo-1595365691689-6b7b4e1970cf?w=800&h=600&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1595365691689-6b7b4e1970cf?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1546445317-29f4545e9d53?w=1200&h=800&fit=crop&q=80",
+    ],
+    healthStatus: "good",
+    certification: ["veterinary-checked", "halal-certified", "premium-grade"],
+    description:
+      "Sapi PO jantan dengan badan kokoh dan sehat. Jenis sapi lokal Indonesia yang terkenal tahan penyakit dan memiliki daging yang berkualitas baik.",
+    gender: "male",
+    color: "Putih Keabu-abuan",
+    featured: false,
+  },
+
+  // ============================================================
+  // 🐐 KAMBING (GOATS) — Foto kambing qurban asli
+  // ============================================================
+  {
+    id: "goat-001",
+    name: "Amir Al-Jabal",
+    type: "goat",
+    breed: "Etawa Premium",
+    weight: 45,
+    age: 14,
+    price: 5500000,
+    image:
+      "https://images.unsplash.com/photo-1524024973431-2ad916746264?w=800&h=600&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1524024973431-2ad916746264?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1557318041-1ce374d55ebf?w=1200&h=800&fit=crop&q=80",
+    ],
+    healthStatus: "excellent",
+    certification: ["veterinary-checked", "halal-certified", "premium-grade"],
+    description:
+      "Kambing Etawa jantan unggulan dengan postur tubuh besar dan tegap. Diberi pakan organik premium dan dipelihara dalam lingkungan yang bersih dan luas.",
+    gender: "male",
+    color: "Putih & Coklat",
+    featured: true,
+  },
+  {
+    id: "goat-002",
+    name: "Zahir Putih",
+    type: "goat",
+    breed: "Kacang",
+    weight: 32,
+    age: 12,
+    price: 3200000,
+    image:
+      "https://images.unsplash.com/photo-1557318041-1ce374d55ebf?w=800&h=600&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1557318041-1ce374d55ebf?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1524024973431-2ad916746264?w=1200&h=800&fit=crop&q=80",
+    ],
+    healthStatus: "good",
+    certification: ["veterinary-checked", "halal-certified"],
+    description:
+      "Kambing Kacang yang sehat dan aktif, sempurna untuk Qurban individu. Terawat dengan baik dan rutin diperiksa oleh tim dokter hewan kami.",
+    gender: "male",
+    color: "Putih",
+    featured: false,
+  },
+  {
+    id: "goat-003",
+    name: "Malik Premium",
+    type: "goat",
+    breed: "Boer Cross",
+    weight: 52,
+    age: 16,
+    price: 6800000,
+    image:
+      "https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=800&h=600&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1524024973431-2ad916746264?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1557318041-1ce374d55ebf?w=1200&h=800&fit=crop&q=80",
+    ],
+    healthStatus: "excellent",
+    certification: [
+      "veterinary-checked",
+      "halal-certified",
+      "premium-grade",
+      "organic-fed",
+    ],
+    description:
+      "Kambing Boer persilangan kelas atas dengan massa otot yang mengesankan. Pilihan premium bagi yang mencari kambing terbaik untuk Qurban.",
+    gender: "male",
+    color: "Coklat & Putih",
+    featured: true,
+  },
+  {
+    id: "goat-004",
+    name: "Bintang Gunung",
+    type: "goat",
+    breed: "Jawarandu",
+    weight: 38,
+    age: 13,
+    price: 4200000,
+    image:
+      "https://images.unsplash.com/photo-1533318087102-b3ad366ed041?w=800&h=600&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1533318087102-b3ad366ed041?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=1200&h=800&fit=crop&q=80",
+    ],
+    healthStatus: "good",
+    certification: ["veterinary-checked", "halal-certified", "premium-grade"],
+    description:
+      "Kambing Jawarandu pilihan dengan badan yang kokoh dan sehat. Persilangan unggul yang menghasilkan daging berkualitas tinggi untuk Qurban.",
+    gender: "male",
+    color: "Hitam & Putih",
+    featured: false,
+  },
+  {
+    id: "goat-005",
+    name: "Raziq Perkasa",
+    type: "goat",
+    breed: "PE (Peranakan Etawa)",
+    weight: 48,
+    age: 15,
+    price: 5800000,
+    image:
+      "https://images.unsplash.com/photo-1559190394-df5a28aab5c5?w=800&h=600&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1559190394-df5a28aab5c5?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1524024973431-2ad916746264?w=1200&h=800&fit=crop&q=80",
+    ],
+    healthStatus: "excellent",
+    certification: ["veterinary-checked", "halal-certified", "premium-grade"],
+    description:
+      "Kambing PE jantan besar dengan tanduk gagah. Dipelihara di dataran tinggi dengan udara sejuk dan pakan berkualitas. Daging tebal dan sehat.",
+    gender: "male",
+    color: "Coklat Belang",
+    featured: false,
+  },
+
+  // ============================================================
+  // 🐑 DOMBA (SHEEP) — Foto domba qurban asli
+  // ============================================================
+  {
+    id: "sheep-001",
+    name: "Nawfal Domba",
+    type: "sheep",
+    breed: "Garut Premium",
+    weight: 48,
+    age: 14,
+    price: 4800000,
+    image:
+      "https://images.unsplash.com/photo-1484557985045-edf25e08da73?w=800&h=600&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1484557985045-edf25e08da73?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?w=1200&h=800&fit=crop&q=80",
+    ],
+    healthStatus: "excellent",
+    certification: ["veterinary-checked", "halal-certified", "premium-grade"],
+    description:
+      "Domba Garut jantan yang gagah dengan postur tubuh yang kuat. Terkenal dengan kualitas daging yang empuk dan dipelihara dengan standar perawatan tertinggi.",
+    gender: "male",
+    color: "Hitam",
+    featured: true,
+  },
+  {
+    id: "sheep-002",
+    name: "Khalid Merino",
+    type: "sheep",
+    breed: "Merino Cross",
+    weight: 42,
+    age: 12,
+    price: 4200000,
+    image:
+      "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&h=600&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1484557985045-edf25e08da73?w=1200&h=800&fit=crop&q=80",
+    ],
+    healthStatus: "good",
+    certification: ["veterinary-checked", "halal-certified"],
+    description:
+      "Domba Merino persilangan berkualitas dengan bulu lebat dan daging yang lezat. Pilihan tepat untuk Qurban dengan harga yang terjangkau.",
+    gender: "male",
+    color: "Putih",
+    featured: false,
+  },
+  {
+    id: "sheep-003",
+    name: "Faris Elite",
+    type: "sheep",
+    breed: "Texel",
+    weight: 55,
+    age: 18,
+    price: 5800000,
+    image:
+      "https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?w=800&h=600&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1484557985045-edf25e08da73?w=1200&h=800&fit=crop&q=80",
+    ],
+    healthStatus: "excellent",
+    certification: [
+      "veterinary-checked",
+      "halal-certified",
+      "premium-grade",
+      "organic-fed",
+    ],
+    description:
+      "Domba Texel premium dengan rasio daging-tulang yang luar biasa. Domba terbaik dalam koleksi kami untuk pengalaman Qurban yang istimewa.",
+    gender: "male",
+    color: "Putih",
+    featured: false,
+  },
+  {
+    id: "sheep-004",
+    name: "Harun Agung",
+    type: "sheep",
+    breed: "Ekor Gemuk",
+    weight: 50,
+    age: 15,
+    price: 5200000,
+    image:
+      "https://images.unsplash.com/photo-1510771463146-e89e6e86560e?w=800&h=600&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1510771463146-e89e6e86560e?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1484557985045-edf25e08da73?w=1200&h=800&fit=crop&q=80",
+    ],
+    healthStatus: "excellent",
+    certification: ["veterinary-checked", "halal-certified", "premium-grade"],
+    description:
+      "Domba Ekor Gemuk unggulan dengan bobot ideal untuk Qurban. Jenis domba tradisional Indonesia yang terkenal dengan dagingnya yang gurih dan berlemak sehat.",
+    gender: "male",
+    color: "Coklat & Putih",
+    featured: true,
+  },
+  {
+    id: "sheep-005",
+    name: "Bilal Mulia",
+    type: "sheep",
+    breed: "Dorper",
+    weight: 46,
+    age: 13,
+    price: 4500000,
+    image:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&h=600&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&h=800&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=1200&h=800&fit=crop&q=80",
+    ],
+    healthStatus: "good",
+    certification: ["veterinary-checked", "halal-certified"],
+    description:
+      "Domba Dorper dengan pertumbuhan cepat dan daging berkualitas. Jenis domba yang mudah beradaptasi dan memiliki kadar lemak ideal untuk masakan qurban.",
+    gender: "male",
+    color: "Putih & Hitam",
+    featured: false,
+  },
+];
+
+export function formatPrice(price: number): string {
+  return new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(price);
+}
+
+export function getTypeLabel(type: string): string {
+  const labels: Record<string, string> = {
+    cow: "Sapi",
+    goat: "Kambing",
+    sheep: "Domba",
+  };
+  return labels[type] || type;
+}
+
+export function getTypeEmoji(type: string): string {
+  const emojis: Record<string, string> = {
+    cow: "🐄",
+    goat: "🐐",
+    sheep: "🐑",
+  };
+  return emojis[type] || "🐾";
+}
